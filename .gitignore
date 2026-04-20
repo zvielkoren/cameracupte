@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Arch Linux packaging artifacts
+cameracupte/
+src/cameracupte/
+pkg/
+*.pkg.tar.*
+camera-cupte-git/

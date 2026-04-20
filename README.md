@@ -1,6 +1,6 @@
 # CameraCupte PRO 📸
 
-![CameraCupte Hero](/home/zviel/.gemini/antigravity/brain/0c424eaa-54c7-4358-9c42-f9b2bdd0494b/cameracupte_hero_production_1776708341859.png)
+![CameraCupte Hero](/assets/hero.png)
 
 **CameraCupte** is a professional, high-performance remote controller and AI virtual webcam suite for Canon EOS cameras (optimized for the EOS 600D). 
 
@@ -40,4 +40,4 @@ sudo modprobe v4l2loopback devices=1 video_nr=9 card_label="CameraCupte" exclusi
 MIT
 
 ---
-Developed with ❤️ by Antigravity for a professional Canon experience.
+Developed with ❤️ by [@Zviel](zviel.com) (@zvielkoren)for a professional Canon experience.

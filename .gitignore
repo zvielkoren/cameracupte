@@ -29,3 +29,6 @@ src/cameracupte/
 pkg/
 *.pkg.tar.*
 camera-cupte-git/
+
+task.md
+implementation_plan.md

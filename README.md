@@ -40,4 +40,4 @@ sudo modprobe v4l2loopback devices=1 video_nr=9 card_label="CameraCupte" exclusi
 MIT
 
 ---
-Developed with ❤️ by [@Zviel](zviel.com) (@zvielkoren)for a professional Canon experience.
+Developed with ❤️ by [@Zviel](https://zviel.com) ([@zvielkoren](https://github.com/zvielkoren/)) for a professional Canon experience.

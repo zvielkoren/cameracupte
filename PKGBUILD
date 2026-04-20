@@ -1,5 +1,5 @@
 pkgname=camera-cupte-git
-pkgver=v0.0.1.r1.g96ee685
+pkgver=v0.0.1.r2.g8c8d043
 pkgrel=1
 pkgdesc="CameraCupte - Canon EOS Virtual Webcam & Controller"
 arch=('x86_64')

@@ -134,7 +134,11 @@ impl CameraManager {
             .config_key::<RadioWidget>("autofocusdrive")
             .wait()
         {
-            let _ = widget.set_choice("1"); // 1 usually means "trigger"
+            if let Err(e) = widget.set_choice("1") {
+                println!("[CAMERA] Warning: autofocusdrive '1' failed: {}", e);
+                // Try "On" as fallback
+                let _ = widget.set_choice("On");
+            }
             let _ = self.camera.set_config(&widget).wait();
             triggered = true;
         }
@@ -145,10 +149,20 @@ impl CameraManager {
             .config_key::<RadioWidget>("eosremoterelease")
             .wait()
         {
-            let _ = widget.set_choice("Press 1");
+            // The choices vary by Canon model. Common ones are "Press Half", "Press 1", "Immediate".
+            // Let's try "Press Half" first, then "Press 1"
+            if let Err(e) = widget.set_choice("Press Half") {
+                println!("[CAMERA] Warning: eosremoterelease 'Press Half' failed: {}", e);
+                if let Err(_) = widget.set_choice("Press 1") {
+                    let _ = widget.set_choice("Immediate"); // Another fallback
+                }
+            }
             let _ = self.camera.set_config(&widget).wait();
             std::thread::sleep(std::time::Duration::from_millis(400));
+            
+            let _ = widget.set_choice("Release Half");
             let _ = widget.set_choice("Release 1");
+            let _ = widget.set_choice("None");
             let _ = self.camera.set_config(&widget).wait();
             triggered = true;
         }

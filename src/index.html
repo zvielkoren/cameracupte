@@ -9,9 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <!-- MediaPipe AI Focus -->
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils"></script>
-  <script type="module" src="/main.js" defer></script>
+  <script src="./mediapipe/face_detection.js"></script>
+  <script src="./main.js" defer></script>
 </head>
 <body>
   <div class="app-container">
@@ -33,8 +32,8 @@
       <!-- Video Preview Area -->
       <section class="preview-section glass-panel">
         <div class="preview-wrapper" id="preview-wrapper">
-          <img id="preview-img" class="preview-image" src="" alt="Live View">
-          <img id="preview-background" class="preview-background" src="" alt="Blur Layer">
+          <img id="preview-img" class="preview-image" alt="Live View">
+          <img id="preview-background" class="preview-background" alt="Blur Layer">
           <div id="focus-box" class="focus-box"></div>
           
           <div class="viewfinder-marks">
@@ -138,6 +137,7 @@
                     <option value="One Shot">Autofocus (One Shot)</option>
                     <option value="AI Tracking">AI Face Tracking</option>
                     <option value="Smart Focus">Smart Eye-Priority</option>
+                    <option value="Manual Object">Manual Object Tracking</option>
                   </select>
                 </div>
                 <div class="toggle-group mb-1">

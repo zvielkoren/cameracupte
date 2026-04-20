@@ -1,0 +1,27 @@
+{
+  "permission": [
+    {
+      "identifier": "allow-camera-commands",
+      "description": "Allow all camera related commands",
+      "commands": {
+        "allow": [
+          "startcamera",
+          "stopcamera",
+          "createvirtualdevice",
+          "debugcamera",
+          "setiso",
+          "setaperture",
+          "setshutterspeed",
+          "manualfocus",
+          "triggerautofocus",
+          "setfocusmode",
+          "setwhitebalance",
+          "setpicturestyle",
+          "setexposurecompensation",
+          "setmeteringmode",
+          "setflashmode"
+        ]
+      }
+    }
+  ]
+}

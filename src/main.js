@@ -289,6 +289,10 @@ window.addEventListener("DOMContentLoaded", async () => {
   const focusModeSelect = document.querySelector("#focus-mode-select");
   const focusBox = document.querySelector("#focus-box");
 
+  const AF_COOLDOWN_MS = 2500;
+  let afInFlight = false;
+  let lastAfTriggerTime = 0;
+
   async function throttledAF(reason, xPct = 0.5, yPct = 0.5) {
     const now = Date.now();
     if (afInFlight || (now - lastAfTriggerTime) < AF_COOLDOWN_MS) return;

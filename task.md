@@ -1,0 +1,7 @@
+- [x] Initialize Cargo project and add dependencies.
+- [x] Create `src/camera.rs` to handle gphoto2 interactions (detect camera, start Live View, capture preview).
+- [x] Create `src/decoder.rs` to decode MJPEG to YUYV using turbojpeg.
+- [x] Create `src/v4l2_out.rs` to handle the v4l2loopback interaction (open device, set format, write frames).
+- [x] Implement `src/main.rs` to glue it all together using tokio for concurrency and channels.
+- [x] Add CLI commands or async channel loop for ISO and Aperture control.
+- [x] Verify the application builds without errors.

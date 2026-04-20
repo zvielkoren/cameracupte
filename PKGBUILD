@@ -1,11 +1,11 @@
 pkgname=camera-cupte-git
-pkgver=v0.0.1.r0.ge487e69
+pkgver=v0.0.1.r1.g96ee685
 pkgrel=1
 pkgdesc="CameraCupte - Canon EOS Virtual Webcam & Controller"
 arch=('x86_64')
 url="https://github.com/zvielkoren/cameracupte"
 license=('MIT')
-depends=('gtk3' 'webkit2gtk-4.1' 'alsa-lib' 'xdotool')
+depends=('gtk3' 'webkit2gtk-4.1' 'alsa-lib' 'xdotool' 'libjpeg-turbo')
 makedepends=('cargo' 'npm' 'nodejs')
 source=("git+file://${PWD}")
 md5sums=('SKIP')
@@ -19,6 +19,11 @@ pkgver() {
 build() {
   cd "$srcdir/cameracupte"
   export APPIMAGE_EXTRACT_AND_RUN=1
+  export TURBOJPEG_SOURCE=explicit
+  export TURBOJPEG_LIB_DIR=/usr/lib
+  export TURBOJPEG_INCLUDE_DIR=/usr/include
+  export TURBOJPEG_DYNAMIC=1
+  
   # Prevent Tauri from trying to build deb/appimage during Arch packaging
   sed -i 's/"targets": \["deb", "appimage"\]/"targets": \[\]/g' src-tauri/tauri.conf.json
   sed -i 's/"targets": \["deb"\]/"targets": \[\]/g' src-tauri/tauri.conf.json
